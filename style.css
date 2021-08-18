@@ -1,0 +1,405 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid black;
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  color: white;
+}
+
+#menu > a {
+  padding: 16px 20px;
+  font-size: 20px;
+}
+
+#menu > a:hover {
+  background-color: rgb(246, 246, 246);
+  border-radius: 8px;
+}
+
+.navbar__toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+}
+
+section {
+  height: 500px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.fn-font {
+  font-size: 25px;
+}
+
+#intro > content > span,
+#vision > content > span {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 930px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  #menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #menu a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar__toggleBtn {
+    display: block;
+  }
+
+  #menu.active {
+    display: flex;
+  }
+
+  .item {
+    padding: 20px;
+  }
+
+  .fn-font {
+    font-size: 16px;
+  }
+
+  .accordion-i {
+    width: 390px;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+}
+
+#visual {
+  background-color: #3c7191;
+  background-size: cover;
+  background-position: 0% 20%;
+  width: 100%;
+  height: 590px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#visual * {
+  color: white;
+}
+
+#visual h2 {
+  font-size: 60px;
+}
+
+#visual p {
+  margin: 30px 0;
+}
+
+.btn {
+  width: 120px;
+  padding: 8px 12px;
+  border: 3px solid #ddd;
+  background-color: #00b7ff;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2)
+  );
+}
+
+#content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+#content > .item {
+  width: 550px;
+}
+
+.img {
+  width: 100%;
+  height: 250px;
+}
+
+.img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.item .info {
+  background: #fff;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button-row {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn-sm {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: white;
+  width: auto;
+  border: 2px solid #ddd;
+}
+
+.info > h4 {
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.info > p {
+  color: #555;
+}
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+section ii {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.accordion-i {
+  background-color: gray;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0.5rem 2px 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.accordion-link {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 0;
+}
+
+.accordion-link i {
+  color: #e7d5ff;
+  padding: 0.5rem;
+}
+
+.accordion-link .ion-md-remove {
+  display: none;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  transition: max-height 650ms;
+}
+
+.answer::before {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 90%;
+  background-color: black;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.answer p {
+  color: rhba(255, 255, 255, 0.6);
+  font-size: 1.4rem;
+  padding: 2rem;
+}
+
+.accordion-i:target .answer {
+  max-height: 20rem;
+}
+
+.accordion-i:target .accordion-link .ion-md-add {
+  display: none;
+}
+
+.accordion-i:target .accordion-link .ion-md-remove {
+  display: block;
+}
+
+.footer-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.footer-links {
+  font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer-wrapper {
+  min-width: 190px;
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 1em;
+  color: #757575;
+  position: relative;
+}
+
+.footer-top {
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+.footer-link-item {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin-bottom: 16px;
+  display: inline-block;
+  min-width: 100px;
+  width: 25%;
+  padding-right: 12px;
+  vertical-align: top;
+}
+
+#footer-lang-selector-wrapper {
+  margin-right: 32px;
+  position: relative;
+  width: fit-content;
+}
+
+#footer-lang-selector-wrapper::before {
+  font-size: 0.75rem;
+  left: 0.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "\e896";
+  font-family: nf-icon;
+  pointer-events: none;
+  color: #757575;
+}
+
+#footer-lang-selector-wrapper::after {
+  font-size: 0.75rem;
+  right: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "\e898";
+  font-family: nf-icon;
+  font-size: 6px;
+  pointer-events: none;
+  color: #757575;
+}
+
+#footer-lang-selector-wrapper .lang-selector {
+  border-color: #757575;
+  color: #757575;
+  background: #000;
+}
+
+.footer-country {
+  font-size: 13px;
+  margin-top: 24px;
+}
+
+.copy-text {
+  color: grey;
+  margin: 20px 0;
+  font-size: 0.75em;
+  line-height: 1em;
+}
+
+.copy-text .copy-text-block {
+  line-height: 1em;
+}
+
+.copy-text .copy-text-block + .copy-text-block {
+  margin-top: 4px;
+}
+
+.site-footer {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.site-footer-wrapper * {
+  margin-left: 30px;
+}
+
+#ii {
+  height: 570px;
+}
+
+.accordion-i {
+  width: 82%;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+/* 반응형 추가 영역 */
+@media screen and (max-width: 767px) {
+  .footer-link-item {
+    width: 50%;
+  }
+}
